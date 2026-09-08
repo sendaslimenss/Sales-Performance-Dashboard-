@@ -38,15 +38,4 @@ from sales
 group by 1
 order by  1;
 
---Validation / Sanity Check
 
-select
-    count(*)                                            AS total_rows,
-    count(DISTINCT order_id)                            AS unique_orders,
-    min(order_date)                                     AS min_date,
-    max(order_date)                                     AS max_date,
-    sum(case when revenue is null then 1 ELSE 0 END)  AS null_revenue,
-    sum(case when order_date is null then  1 ELSE 0 END) AS null_dates,
-    sum(case when abs(quantity * unit_price * (1 - discount) - revenue) > 0.01
-             then 1 else 0 end)                        AS invalid_revenue
-FROM sales;
