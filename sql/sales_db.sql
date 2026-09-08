@@ -18,7 +18,7 @@ create index idx_sales_region      ON sales(region);
  validation queries (run manually to verify numbers)
 -- ====================
 
--- Check row count & date range
+-- Check row count and  date range
 select count(*) as total_rows,
        min(order_date) as min_date,
        max(order_date) as max_date,
