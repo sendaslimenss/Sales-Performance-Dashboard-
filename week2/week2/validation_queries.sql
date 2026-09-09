@@ -1,9 +1,6 @@
--- ============================================
+
 -- Week 2 - Data Validation Queries
 -- Sales Performance Dashboard
--- ============================================
-
-
 -- 1. Check total rows, date range and total revenue
 SELECT
     COUNT(*) AS total_rows,
@@ -11,8 +8,6 @@ SELECT
     MAX(order_date) AS max_date,
     SUM(revenue) AS total_revenue
 FROM sales;
-
-
 -- 2. Verify revenue calculation
 SELECT
     order_id,
@@ -26,8 +21,6 @@ SELECT
     ) AS calculated_revenue
 FROM sales
 LIMIT 5;
-
-
 -- 3. Check monthly revenue
 SELECT
     DATE_TRUNC('month', order_date) AS month,
@@ -35,8 +28,6 @@ SELECT
 FROM sales
 GROUP BY 1
 ORDER BY 1;
-
-
 -- 4. General sanity check
 SELECT
     COUNT(*) AS total_rows,
