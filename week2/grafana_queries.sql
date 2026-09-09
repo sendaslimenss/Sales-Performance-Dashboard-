@@ -1,21 +1,14 @@
 
 -- Week2 - Grafana SQL Queries
 -- Sales Performance Dashboard
-
-
-
 -- 1. Total Revenue
 SELECT
     SUM(revenue) AS total_revenue
 FROM sales;
-
-
 -- 2. Total Orders
 SELECT
     COUNT(DISTINCT order_id) AS total_orders
 FROM sales;
-
-
 -- 3. Average Order Value
 SELECT
     ROUND(
@@ -23,8 +16,6 @@ SELECT
         2
     ) AS average_order_value
 FROM sales;
-
-
 -- 4. Monthly Revenue
 SELECT
     DATE_TRUNC('month', order_date) AS time,
@@ -32,8 +23,6 @@ SELECT
 FROM sales
 GROUP BY DATE_TRUNC('month', order_date)
 ORDER BY time;
-
-
 -- 5. Top 5 Product Categories
 SELECT
     product_category,
