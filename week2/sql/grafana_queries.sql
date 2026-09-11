@@ -27,14 +27,13 @@ FROM sales
 GROUP BY DATE_TRUNC('month', order_date)
 ORDER BY time;
 
--- 5. Top 5 Product Categories
+-- Revenue by Product Category
 SELECT
     product_category,
     SUM(revenue) AS total_revenue
 FROM sales
 GROUP BY product_category
-ORDER BY total_revenue DESC
-LIMIT 5;
+ORDER BY total_revenue DESC;
 
 -- 6. Revenue by Region
 SELECT
